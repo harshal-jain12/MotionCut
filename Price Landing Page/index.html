@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Product Pricing</title>
+    <link rel="stylesheet" href="C:\Users\Asus\Desktop\Motioncut project\style.css">
+</head>
+<body>
+    <header>
+        <h1>Our Product Pricing</h1>
+        <nav>
+            <ul>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="pricing">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-card" data-price="10">
+            <h3>Basic</h3>
+            <p>$10 / month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <button>Select Plan</button>
+        </div>
+        <div class="pricing-card" data-price="20">
+            <h3>Pro</h3>
+            <p>$20 / month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+            <button>Select Plan</button>
+        </div>
+        <div class="pricing-card" data-price="Contact">
+            <h3>Enterprise</h3>
+            <p>Contact Us</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+                <li>Custom Features</li>
+            </ul>
+            <button>Contact Us</button>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+            <li>Feature 4</li>
+            <li>Custom Features</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, feel free to contact us:</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Our Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        const selectButtons = document.querySelectorAll('.pricing-card button');
+
+        selectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const selectedCard = button.parentNode;
+                const price = selectedCard.getAttribute('data-price');
+                alert(`You selected the ${selectedCard.querySelector('h3').innerText} plan for $${price}`);
+            });
+        });
+    </script>
+</body>
+</html>
